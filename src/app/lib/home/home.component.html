@@ -1,0 +1,26 @@
+<!-- <p>
+  welcome {{ user?.email }}
+  <button class="logout" (click)="logout()">Logout</button>
+</p> -->
+<section class="home">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6 text-center mt-5 mb-3">
+        <h2 class="heading-section">Welcome {{ user?.email }}</h2>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6">
+        <div class="form-group d-flex justify-content-center">
+          <button
+            type="submit"
+            class="btn btn-secondary login w-50"
+            (click)="logout()"
+          >
+            Logout
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
