@@ -30,11 +30,6 @@ Run `npm run test` to execute the unit tests and see the code coverage via [Karm
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-## Login Detail
-
-email-priya@ibm.com
-pwd-ibm@1234
-
 ## What to improve?
 <details>
 <summary>Forgot password implementation</summary>
