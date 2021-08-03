@@ -3,7 +3,7 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { User } from '../models';
-import { Login } from '../store/actions/auth.actions';
+import { Login, LoginFailure } from '../store/actions/auth.actions';
 import { IAppState, selectAuthState } from '../store/app.states';
 import { IState } from '../store/reducers/auth.reducers';
 
@@ -52,6 +52,8 @@ export class LoginComponent implements OnInit {
   login() {
     this.submitted = true;
     if (this.loginForm.invalid) {
+      let err = { error: { message :"Email or password is invalid" } };
+      this.store.dispatch(new LoginFailure(err));
       return;
     }
     this.store.dispatch(new Login(this.loginForm.value));

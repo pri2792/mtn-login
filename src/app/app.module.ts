@@ -14,6 +14,8 @@ import { reducers } from './lib/store/app.states';
 import { AuthEffects } from './lib/store/effects/auth.effects';
 import { FakeBackendInterceptor } from './lib/helpers/fake-backend';
 
+import { environment } from '../environments/environment';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,12 @@ import { FakeBackendInterceptor } from './lib/helpers/fake-backend';
     FormsModule,
     ReactiveFormsModule,
     StoreModule.forRoot(reducers,{}),
-    EffectsModule.forRoot([AuthEffects])
+    EffectsModule.forRoot([AuthEffects]),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25, // Retains last 25 states
+      logOnly: environment.production, // Restrict extension to log-only mode
+      autoPause: true, // Pauses recording actions and state changes when the extension window is not open
+    })
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: FakeBackendInterceptor, multi: true },
