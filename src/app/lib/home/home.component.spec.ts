@@ -14,12 +14,12 @@ describe('HomeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomeComponent ],
+      declarations: [HomeComponent],
       imports: [
-        StoreModule.forRoot(reducers,{}),
+        StoreModule.forRoot(reducers, {}),
       ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
