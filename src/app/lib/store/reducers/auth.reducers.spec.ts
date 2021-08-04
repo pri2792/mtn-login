@@ -20,14 +20,14 @@ describe('Store > Reducer', () => {
     const state = fromReducer.reducer(initialState, action);
 
     expect(state).toEqual({
-        ...initialState,
-        isAuthenticated: true,
-        user: {
-          email: action.payload.email,
-          password: action.payload.password,
-        },
-        error: null,
-      });
+      ...initialState,
+      isAuthenticated: true,
+      user: {
+        email: action.payload.email,
+        password: action.payload.password,
+      },
+      error: null,
+    });
   });
 
   it('Should return the LOGIN_ERROR state', () => {
@@ -39,7 +39,7 @@ describe('Store > Reducer', () => {
     const action = new fromActions.LoginFailure(payload);
     const state = fromReducer.reducer(initialState, action);
 
-    expect(state).toEqual({...initialState, error: 'Invalid User/Password'});
+    expect(state).toEqual({ ...initialState, error: 'Invalid User/Password' });
   });
 
   it('Should return the LOGOUT state', () => {

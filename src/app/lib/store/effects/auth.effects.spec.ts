@@ -25,7 +25,7 @@ describe('Store > AuthEffects', () => {
       imports: [
         HttpClientModule,
         AppRoutingModule,
-        StoreModule.forRoot(reducers,{}),
+        StoreModule.forRoot(reducers, {}),
         EffectsModule.forRoot([AuthEffects])
       ],
       providers: [

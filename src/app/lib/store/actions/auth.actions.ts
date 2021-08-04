@@ -9,17 +9,17 @@ export enum AuthActionTypes {
 
 export class Login implements Action {
   type = AuthActionTypes.LOGIN;
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 export class LoginSuccess implements Action {
   type = AuthActionTypes.LOGIN_SUCCESS;
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 export class LoginFailure implements Action {
   type = AuthActionTypes.LOGIN_ERROR;
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 export class Logout implements Action {

@@ -61,13 +61,13 @@ describe('LoginComponent', () => {
     controls.password.setValue('');
     component.login();
     fixture.detectChanges();
-​
+
     const emailErrorMsg = fixture.debugElement.nativeElement.querySelector('.email-required');
     const passwordErrorMsg = fixture.debugElement.nativeElement.querySelector('.password-required');
-​
+
     expect(emailErrorMsg).toBeDefined();
     expect(emailErrorMsg.innerHTML).toContain('Email is required');
-​
+
     expect(passwordErrorMsg).toBeDefined();
     expect(passwordErrorMsg.innerHTML).toContain('Password is required');
   });

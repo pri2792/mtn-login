@@ -37,7 +37,7 @@ export class AuthEffects {
     () => {
       return this.actions.pipe(
         ofType(AuthActionTypes.LOGIN_SUCCESS),
-        tap((user: {payload: {email: string, token: string}}) => {
+        tap((user: { payload: { email: string, token: string } }) => {
           localStorage.setItem('token', JSON.stringify(user.payload.token));
           this.router.navigate(['home']);
         })
@@ -70,5 +70,5 @@ export class AuthEffects {
     private actions: Actions,
     private authService: AuthenticationService,
     private router: Router
-  ) {}
+  ) { }
 }
