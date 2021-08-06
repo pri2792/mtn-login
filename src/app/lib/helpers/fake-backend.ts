@@ -46,14 +46,14 @@ export class FakeBackendInterceptor implements HttpInterceptor {
       //   return error('Email or password is incorrect');
       // }
       return ok({
-        email: email,
+        email,
         token: 'fake-jwt-token',
       });
     }
 
     // helper functions
 
-    function ok(body?) {
+    function ok(resbody?) {
       return of(new HttpResponse({ status: 200, body }));
     }
 

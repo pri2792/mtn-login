@@ -2,7 +2,6 @@ import * as fromReducer from './auth.reducers';
 import * as fromActions from '../actions/auth.actions';
 
 describe('Store > Reducer', () => {
-
   it('Should return the default state', () => {
     const { initialState } = fromReducer;
     const state = fromReducer.reducer(undefined, { type: null });
@@ -14,7 +13,7 @@ describe('Store > Reducer', () => {
     const { initialState } = fromReducer;
     const payload: any = {
       email: 'priya@ibm.com',
-      password: 'ibm@1234'
+      password: 'ibm@1234',
     };
     const action = new fromActions.LoginSuccess(payload);
     const state = fromReducer.reducer(initialState, action);
@@ -34,7 +33,7 @@ describe('Store > Reducer', () => {
     const { initialState } = fromReducer;
     const payload: any = {
       email: 'priya@ibm.com',
-      password: 'ibm@12345'
+      password: 'ibm@12345',
     };
     const action = new fromActions.LoginFailure(payload);
     const state = fromReducer.reducer(initialState, action);

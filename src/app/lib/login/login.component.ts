@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
   login() {
     this.submitted = true;
     if (this.loginForm.invalid) {
-      let err = { error: { message: "Email or password is invalid" } };
+      const err = { error: { message: 'Email or password is invalid' } };
       this.store.dispatch(new LoginFailure(err));
       return;
     }

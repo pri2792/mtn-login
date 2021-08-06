@@ -6,7 +6,7 @@ describe('Store > Login > LoginActions', () => {
     const action = new Actions.Login(payload);
     expect({ ...action }).toEqual({
       type: Actions.AuthActionTypes.LOGIN,
-      payload
+      payload,
     });
   });
 
@@ -16,7 +16,7 @@ describe('Store > Login > LoginActions', () => {
 
     expect({ ...action }).toEqual({
       type: Actions.AuthActionTypes.LOGIN_SUCCESS,
-      payload
+      payload,
     });
   });
 
@@ -26,7 +26,7 @@ describe('Store > Login > LoginActions', () => {
 
     expect({ ...action }).toEqual({
       type: Actions.AuthActionTypes.LOGIN_ERROR,
-      payload
+      payload,
     });
   });
 
@@ -34,8 +34,7 @@ describe('Store > Login > LoginActions', () => {
     const action = new Actions.Logout();
 
     expect({ ...action }).toEqual({
-      type: Actions.AuthActionTypes.LOGOUT
+      type: Actions.AuthActionTypes.LOGOUT,
     });
   });
-
 });

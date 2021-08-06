@@ -15,7 +15,7 @@ import * as fromReducer from '../reducers/auth.reducers';
 import { NgZone } from '@angular/core';
 
 describe('Store > AuthEffects', () => {
-  let actions$: Observable<Action>;
+  const actions$: Observable<Action> = new Observable<Action>();
 
   let effects: AuthEffects;
   let authenticationService;
@@ -26,7 +26,7 @@ describe('Store > AuthEffects', () => {
         HttpClientModule,
         AppRoutingModule,
         StoreModule.forRoot(reducers, {}),
-        EffectsModule.forRoot([AuthEffects])
+        EffectsModule.forRoot([AuthEffects]),
       ],
       providers: [
         AuthEffects,
@@ -34,12 +34,14 @@ describe('Store > AuthEffects', () => {
         provideMockActions(() => actions$),
         {
           provide: AuthenticationService,
-          useValue: jasmine.createSpyObj('authenticationservice', ['login'])
+          useValue: jasmine.createSpyObj('authenticationservice', ['login']),
         },
       ],
     });
     effects = TestBed.inject<AuthEffects>(AuthEffects);
-    authenticationService = TestBed.inject<AuthenticationService>(AuthenticationService);
+    authenticationService = TestBed.inject<AuthenticationService>(
+      AuthenticationService
+    );
   }));
 
   it('should be created', () => {

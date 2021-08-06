@@ -1,5 +1,5 @@
-import { User } from "../../models/user";
-import { AuthActionTypes } from "../actions/auth.actions";
+import { User } from '../../models/user';
+import { AuthActionTypes } from '../actions/auth.actions';
 
 export interface IState {
   isAuthenticated: boolean;
@@ -10,7 +10,7 @@ export interface IState {
 export const initialState = {
   isAuthenticated: false,
   user: null,
-  error: null
+  error: null,
 };
 
 export function reducer(state = initialState, action: any): IState {
@@ -21,16 +21,16 @@ export function reducer(state = initialState, action: any): IState {
         isAuthenticated: true,
         user: {
           email: action.payload.email,
-          password: action.payload.password
+          password: action.payload.password,
         },
-        error: null
+        error: null,
       };
     }
 
     case AuthActionTypes.LOGIN_ERROR: {
       return {
         ...state,
-        error: 'Invalid User/Password'
+        error: 'Invalid User/Password',
       };
     }
 
@@ -43,5 +43,3 @@ export function reducer(state = initialState, action: any): IState {
     }
   }
 }
-
-
